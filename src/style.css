@@ -1,17 +1,112 @@
 body {
     background-image: url("/media/clouds.jpg");
     background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Rubik", sans-serif;
 }
 
 .weather-app-content{
-    background: #06060f;
-        background: linear-gradient(175deg, rgba(6, 6, 15, 1) 0%, rgba(13, 13, 38, 1) 37%, rgba(6, 52, 61, 1) 83%);
+    background: #182530;
+    background: linear-gradient(179deg, rgba(24, 37, 48, 1) 38%, rgba(40, 44, 48, 1) 48%, rgba(106, 106, 115, 1) 82%);
+    color: rgb(232, 232, 236);
     max-width: 600px;
     margin: 50px auto;
     padding: 30px;
-    box-shadow: 10px 10px 5px lightblue;
+    box-shadow: 10px 10px 5px rgb(31, 61, 71);
     border-radius: 5px;
-
     }
+
+header{
+    border-bottom: 1px;
+    padding: 30px 0 0 0;
+}
+
+.search-form {
+    margin: -30px 0 0 0;
+}
+.search-form-input {
+    background-color: rgb(139, 139, 155);
+    color: rgb(138, 138, 180);
+    border: none;
+    border-radius: 10px;
+    width: 80%;
+    padding: 15px;
+    font-size: 15px;
+    }
+
+.search-form-button {
+    background-color:#1e3b52;
+    color: rgb(197, 197, 239);
+    border: none;
+    border-radius: 10px;
+    width: 15%;
+    padding: 15px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+main {
+    padding: 30px 0;
+}
+
+.current-city-details{
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.5px;
+    margin: -20px auto;
+}
+
+.weather-info {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.weather-temperature {
+    display: flex;
+}
+
+.temperature-value{
+    font-size: 100px;
+    font-weight: 300;
+    margin-left: 6px;
+    margin-top: -18px;
+}
+
+.temperature-degree{
+    font-size: 28px;
+    margin-left: 6px;
+    margin-top: -43px;
+
+}
+
+.current-weather-details {
+    line-height: 50px;
+    margin-top: -18px;
+}
+.current-city-description{
+    font-size: 20px;
+    margin-left: -26px;
+    padding: 30px;
+}
+.highs-lows{
+    color: #bbddf9;
+    margin: 26px;
+}
+a {
+    color: #09385f;
+}
+footer{
+    text-align: center;
+    color: aliceblue;
+    border-top: 1px solid rgb(232, 232, 236);
+    padding: 10px 0 0 0;
+    margin: 0 auto;
+    font-size: 10px;
+    font-weight: 300px;
+}
