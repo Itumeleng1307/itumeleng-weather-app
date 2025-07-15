@@ -25,9 +25,10 @@ header{
 .search-form {
     margin: -30px 0 0 0;
 }
+
 .search-form-input {
-    background-color: rgb(139, 139, 155);
-    color: rgb(138, 138, 180);
+    background: rgb(52, 52, 108);
+    color: #7ca1c0;
     border: none;
     border-radius: 10px;
     width: 80%;
@@ -37,7 +38,7 @@ header{
 
 .search-form-button {
     background-color:#1e3b52;
-    color: rgb(197, 197, 239);
+    color: #bbddf9;
     border: none;
     border-radius: 10px;
     width: 15%;
@@ -54,11 +55,15 @@ main {
     padding: 30px 0;
 }
 
-.current-city-details{
+.current-city-details {
     text-align: center;
     font-size: 10px;
     line-height: 1.5px;
     margin: -20px auto;
+}
+
+.current-condition {
+    margin: 20px auto;
 }
 
 .weather-info {
@@ -71,8 +76,8 @@ main {
     display: flex;
 }
 
-.temperature-value{
-    font-size: 100px;
+.temperature-value {
+    font-size: 120px;
     font-weight: 300;
     margin-left: 6px;
     margin-top: -18px;
@@ -89,18 +94,24 @@ main {
     line-height: 50px;
     margin-top: -18px;
 }
+
 .current-city-description{
     font-size: 20px;
     margin-left: -26px;
     padding: 30px;
 }
+
 .highs-lows{
     color: #bbddf9;
-    margin: 26px;
+    margin: 30px ;
+    margin-top: 18px;
+    padding: 18px;
 }
+
 a {
     color: #09385f;
 }
+
 footer{
     text-align: center;
     color: aliceblue;
