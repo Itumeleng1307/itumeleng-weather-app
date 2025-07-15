@@ -1,8 +1,14 @@
+function refreshWeather(response) {
+    console.log(response.data)
+}
+
+
 function searchCity (city) {
     // call API
 let apiKey = "03bb378d4df0e4c5cat14b701460900o"
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-console.log (apiUrl);
+// console.log (apiUrl); - check if API works (City changes and the console shows all information about the weather)
+axios.get (apiUrl).then(refreshWeather)
 }
 
 
