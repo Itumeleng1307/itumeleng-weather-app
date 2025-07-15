@@ -13,25 +13,35 @@
 <body>
     <div class="weather-app-content">
     <header>
-    <form class="search-form">
-        <input type="search" placeholder="Enter your city" required class="search-form-input">
+    <form class="search-form" id="search-form">
+        <input type="search" placeholder="Enter your city" required class="search-form-input" id="search-form-input">
         <input type="submit" value="Search" class="search-form-button">
     </form>
     </header>
 <main>
-    <h1>
+    
+    <div class="current-city-details">
+    <h1 id="city">
         Johannesburg
     </h1>
-    <h2>
-        Monday, 12:51 am
-    </h2>
-    ☀️ Mostly Sunny
-    <p> 17°C </p>
-    <p> 
-        H: 17°C 
+    <p class="current-condition"> <strong> Monday</strong>, 12:51 | <strong> Precipitation:</strong> 0% |
+    <strong>Humidity:</strong> 77% |
+    <strong>Wind:</strong> 8 km/h</p>
+    </div>
+    <div class="weather-info">
+    <div class="current-weather-details">
+        <div class="current-city-description">☀️ Mostly Sunny</div>
+        <div class="weather-temperature">
+            <div class="temperature-value">17</div>
+            <div class="temperature-degree">°C</div>
+        </div>
+    </div>
+    <p class="highs-lows"> 
+        <strong>H: 17°C </strong>
         <br>
         L: 7°C
     </p>
+</div>
 </main>
 <footer>
     This project was Coded by 
@@ -40,5 +50,6 @@
     <a href="itumeleng-weather-app.netlify.app" target="_blank">Netlify</a>
 </footer>
 </div>
+<script src="src/script.js"></script>
 </body>
 </html>
