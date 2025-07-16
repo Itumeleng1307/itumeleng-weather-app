@@ -90,10 +90,9 @@ h1 {
 }
 
 .temperature-icon {
-    font-size: 800px;
-    font-weight: 300;
+    width:100px;
     margin-left: 6px;
-    margin-top: -18px;
+    margin-top: -38px;
 }
 .temperature-degree{
     font-size: 28px;

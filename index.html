@@ -23,7 +23,7 @@
     
     <div class="current-city-details">
     <h1 id="city">Johannesburg</h1>
-    <p class="current-condition"> <strong id="day-time"> Monday, 12:51 </strong> | <strong> Precipitation:</strong> 0% |
+    <p class="current-condition"> <strong id="day-time"> Monday, 12:51 </strong> |
     <strong>Humidity:</strong> <em id="humidity"></em> |
     <strong>Wind:</strong> <em id="wind-speed"></em>
     </p>
@@ -32,8 +32,9 @@
     <div class="current-weather-details">
         <div class="description" id="description">Mostly Sunny</div>
         <div class="weather-temperature">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="clear-sky-day"
-                class="temperature-icon"/>
+            <div id="icons">
+              
+            </div>
 
             
             <div class="temperature-value" id="temperature">17</div>
@@ -41,9 +42,9 @@
         </div>
     </div>
     <p class="highs-lows"> 
-        <strong>H: 17°C </strong>
+        <strong>H:</strong> <em id = "maximum"></em> 
         <br>
-        L: 7°C
+        <strong>L:</strong> <em id = "minimum"></em>
     </p>
 </div>
 </main>

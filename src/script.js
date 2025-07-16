@@ -10,15 +10,18 @@ function refreshWeather(response) {
     let windSpeedElement = document.querySelector("#wind-speed");
     let dayTimeElement = document.querySelector("#day-time");
     let date = new Date(response.data.time * 1000);
-
     let iconElement = document.querySelector("#icons");
+    let maximumElement = document.querySelector("#maximum");
+    let minimumElement = document.querySelector("minimum");
     
-    iconElement.innerHTML = ` <img src="${response.data.condition.icon_url}" class="temperature-icon" />`
+    
     // console.log(response.data);
 
 // console.log(response.data.condition.description); - Check if description condition will refresh on page
-
-
+    // minimumElement.innerHTML = `${response.data.temperature.minimum}°C`;
+    maximumElement.innerHTML = `${response.data.temperature.maximum}°C`;
+    
+    iconElement.innerHTML = ` <img src="${response.data.condition.icon_url}" class="temperature-icon" />`
     cityElement.innerHTML = response.data.city;
     dayTimeElement.innerHTML = formatDate(date);
     descriptionElement.innerHTML = response.data.condition.description;
