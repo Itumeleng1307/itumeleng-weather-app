@@ -9,15 +9,14 @@ function refreshWeather(response) {
     let humidityElement = document.querySelector("#humidity");
     let windSpeedElement = document.querySelector("#wind-speed");
     let dayTimeElement = document.querySelector("#day-time");
-    let date = new Date(response.data.day.time * 1000);
+    let date = new Date(response.data.time * 1000);
 
-    console.log(response.data);
+    // console.log(response.data);
 
 // console.log(response.data.condition.description); - Check if description condition will refresh on page
 
 
     cityElement.innerHTML = response.data.city;
-
     dayTimeElement.innerHTML = formatDate(date);
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -32,13 +31,19 @@ function formatDate(date) {
     let hours = date.getHours();
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days [date.getDay()];
+
+    if (minutes < 10) {
+        minutes `0${minutes}`;
+    }
+
+
     return `${day} ${hours}:${minutes}`;
 }
 
 // Function for refreshing City
 function searchCity (city) {
     // call API
-let apiKey = "03bb378d4df0e4c5cat14b701460900o"
+let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f"
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 // console.log (apiUrl); - check if API works (City changes and the console shows all information about the weather)
 axios.get (apiUrl).then(refreshWeather)
