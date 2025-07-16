@@ -11,6 +11,9 @@ function refreshWeather(response) {
     let dayTimeElement = document.querySelector("#day-time");
     let date = new Date(response.data.time * 1000);
 
+    let iconElement = document.querySelector("#icons");
+    
+    iconElement.innerHTML = ` <img src="${response.data.condition.icon_url}" class="temperature-icon" />`
     // console.log(response.data);
 
 // console.log(response.data.condition.description); - Check if description condition will refresh on page
@@ -43,7 +46,7 @@ function formatDate(date) {
 // Function for refreshing City
 function searchCity (city) {
     // call API
-let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f"
+let apiKey = "03bb378d4df0e4c5cat14b701460900o"
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 // console.log (apiUrl); - check if API works (City changes and the console shows all information about the weather)
 axios.get (apiUrl).then(refreshWeather)
