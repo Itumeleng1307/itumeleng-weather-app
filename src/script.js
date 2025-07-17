@@ -63,8 +63,37 @@ function handleSearchSubmit (event) {
 }
 
 
+function displayForecast() {
+    
+
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let upcomingHtml = "";
+
+    days.forEach(function (day) {
+    upcomingHtml = 
+    upcomingHtml +
+    `
+    <div class="weather-forecast-day">
+        <div class="forecast-day">${day}</div>
+        <div class="forecast-icon">☀️</div>
+        <div class="forecast-highs-lows">
+            <div class="forecast-high-low">
+                <strong>20°C</strong>
+            </div>
+            <div class="forecast-high-low">15°C</div>
+        </div>
+    </div>`;
+
+    })
+
+let upcomingElement = document.querySelector("#upcoming");
+upcomingElement.innerHTML= upcomingHtml
+
+}
+
 let searchFormElement = document.querySelector ("#search-form");
 searchFormElement.addEventListener ("submit", handleSearchSubmit);
 
-// Default City that will appear when page is loaded
+// Default City & Forecast that will appear when page is loaded  - calling the function
 searchCity("Johannesburg");
+displayForecast();
