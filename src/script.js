@@ -12,12 +12,12 @@ function refreshWeather(response) {
     let date = new Date(response.data.time * 1000);
     let iconElement = document.querySelector("#icons");
    
+
     
     
     // console.log(response.data);
 
 // console.log(response.data.condition.description); - Check if description condition will refresh on page
-    
     iconElement.innerHTML = ` <img src="${response.data.condition.icon_url}" class="temperature-icon" />`
     cityElement.innerHTML = response.data.city;
     dayTimeElement.innerHTML = formatDate(date);
@@ -82,9 +82,7 @@ axios.get (apiUrl). then(displayForecast)
 
 
 function displayForecast(response) {
-    console.log(response.data);
-    
-
+    // console.log(response.data);
     let upcomingHtml = "";
 
     response.data.daily.forEach(function (day, index) {
@@ -94,7 +92,7 @@ function displayForecast(response) {
     upcomingHtml +
     `
     <div class="weather-forecast-day">
-        <div class="forecast-day">${formatDay(day.timestamp)}</div>
+        <div class="forecast-day">${formatDay(day.time)}</div>
         <img src ="${day.condition.icon_url}" class="forecast-icon"/>
         <div class="forecast-highs-lows">
             <div class="forecast-high-low">

@@ -121,12 +121,7 @@ h1 {
     margin-bottom: 10px;
     gap:15px;
 
-
     /* font-size: 10px;
-    
-   
-    
-    
     margin-bottom: 20px;
      */
 }
@@ -136,9 +131,6 @@ h1 {
     border: 1px solid aliceblue;
     background: rgba(240, 248, 255, 0.2);
     border-radius: 9px;
-    
-
-
 }
 
 .forecast-day {
