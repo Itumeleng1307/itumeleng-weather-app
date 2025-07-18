@@ -25,7 +25,8 @@ function refreshWeather(response) {
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
     temperatureElement.innerHTML = Math.round(temperature);
-    
+
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -62,6 +63,15 @@ function handleSearchSubmit (event) {
     searchCity (searchInput.value);
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+    return days [date.getDay()];
+
+
+}
+
 function getForecast (city) {
 let apiKey = "03bb378d4df0e4c5cat14b701460900o";
 let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apiKey}&units=metric`; 
@@ -75,23 +85,25 @@ function displayForecast(response) {
     console.log(response.data);
     
 
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let upcomingHtml = "";
 
-    days.forEach(function (day) {
+    response.data.daily.forEach(function (day, index) {
+        if (index < 5 ) {
+    // only display days with Values 0-5 (index)
     upcomingHtml = 
     upcomingHtml +
     `
     <div class="weather-forecast-day">
-        <div class="forecast-day">${day}</div>
-        <div class="forecast-icon">☀️</div>
+        <div class="forecast-day">${formatDay(day.timestamp)}</div>
+        <img src ="${day.condition.icon_url}" class="forecast-icon"/>
         <div class="forecast-highs-lows">
             <div class="forecast-high-low">
-                <strong>20°C</strong>
+                <strong>${Math.round (day.temperature.maximum)}°C</strong>
             </div>
-            <div class="forecast-high-low">15°C</div>
+            <div class="forecast-high-low">${Math.round(day.temperature.minimum)}°C</div>
         </div>
     </div>`;
+       }
 
     })
 
@@ -105,4 +117,4 @@ searchFormElement.addEventListener ("submit", handleSearchSubmit);
 
 // Default City & Forecast that will appear when page is loaded  - calling the function
 searchCity("Johannesburg");
-getForecast("Johannesburg");
+
