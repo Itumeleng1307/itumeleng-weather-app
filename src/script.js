@@ -75,7 +75,7 @@ function formatDay(timestamp) {
 function getForecast (city) {
 let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
 let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apiKey}&units=metric`; 
-console.log(apiUrl) 
+// console.log(apiUrl) 
 // - check if apiUrl is working
 axios.get (apiUrl). then(displayForecast)
 }
