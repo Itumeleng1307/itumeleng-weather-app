@@ -62,8 +62,17 @@ function handleSearchSubmit (event) {
     searchCity (searchInput.value);
 }
 
+function getForecast (city) {
+let apiKey = "03bb378d4df0e4c5cat14b701460900o";
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apiKey}&units=metric`; 
+console.log(apiUrl) 
+// - check if apiUrl is working
+axios.get (apiUrl). then(displayForecast)
+}
 
-function displayForecast() {
+
+function displayForecast(response) {
+    console.log(response.data);
     
 
     let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -96,4 +105,4 @@ searchFormElement.addEventListener ("submit", handleSearchSubmit);
 
 // Default City & Forecast that will appear when page is loaded  - calling the function
 searchCity("Johannesburg");
-displayForecast();
+getForecast("Johannesburg");
